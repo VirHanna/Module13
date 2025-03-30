@@ -122,6 +122,7 @@ public class JsonPlaceholderClient {
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/json");
+            connection.setRequestProperty("Accept", "application/json");
             connection.setDoOutput(true);
             connection.getOutputStream().write(jsonInputString.getBytes(StandardCharsets.UTF_8));
 
@@ -150,6 +151,7 @@ public class JsonPlaceholderClient {
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("PUT");
             connection.setRequestProperty("Content-Type", "application/json");
+            connection.setRequestProperty("Accept", "application/json");
             connection.setDoOutput(true);
             connection.getOutputStream().write(jsonInputString.getBytes(StandardCharsets.UTF_8));
 
@@ -173,6 +175,7 @@ public class JsonPlaceholderClient {
             URL url = new URL(BASE_URL + "/users/" + userId);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("DELETE");
+            connection.setRequestProperty("Accept", "application/json");
 
             int responseCode = connection.getResponseCode();
             if (responseCode >= 200 && responseCode < 300) {
@@ -191,6 +194,7 @@ public class JsonPlaceholderClient {
             URL url = new URL(BASE_URL + "/users");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
+            connection.setRequestProperty("Accept", "application/json");
 
             int responseCode = connection.getResponseCode();
             if (responseCode == HttpURLConnection.HTTP_OK) {
@@ -209,6 +213,7 @@ public class JsonPlaceholderClient {
             URL url = new URL(BASE_URL + "/users/" + userId);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
+            connection.setRequestProperty("Accept", "application/json");
 
             int responseCode = connection.getResponseCode();
             if (responseCode == HttpURLConnection.HTTP_OK) {
@@ -227,6 +232,7 @@ public class JsonPlaceholderClient {
             URL url = new URL(BASE_URL + "/users?username=" + username);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
+            connection.setRequestProperty("Accept", "application/json");
 
             int responseCode = connection.getResponseCode();
             if (responseCode == HttpURLConnection.HTTP_OK) {
@@ -245,6 +251,7 @@ public class JsonPlaceholderClient {
             URL url = new URL(BASE_URL + "/posts?userId=" + userId);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
+            connection.setRequestProperty("Accept", "application/json");
 
             int responseCode = connection.getResponseCode();
             if (responseCode == HttpURLConnection.HTTP_OK) {
@@ -263,6 +270,7 @@ public class JsonPlaceholderClient {
             URL url = new URL(BASE_URL + "/comments?postId=" + postId);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
+            connection.setRequestProperty("Accept", "application/json");
 
             int responseCode = connection.getResponseCode();
             if (responseCode == HttpURLConnection.HTTP_OK) {
